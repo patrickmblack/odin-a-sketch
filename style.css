@@ -1,0 +1,37 @@
+/* style.css */
+
+body{
+    background-color: rgb(67, 63, 105);
+}
+
+h1{
+    text-align: center;
+    color: silver;
+}
+
+#game{
+    display: flex;
+
+}
+
+#controls{
+    background-color: aqua;
+    flex-grow: 2;
+}
+
+#grid-container{
+    background-color: deeppink;
+    flex-grow: 3;
+    display: flex;
+    /* justify-content: space-evenly; */
+    flex-wrap: wrap;
+}
+
+#grid-container > div{
+    background-color: wheat;
+    width: 30px;
+    height: 30px;
+    margin: 4px;
+    padding: 4px;
+
+}
