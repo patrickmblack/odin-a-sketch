@@ -9,12 +9,16 @@
 <body>
     <h1>Etchy</h1>
     <div id="game">
+        <div id="grid-container">
+            <!-- <p>grid stuff</p> -->
+        </div>
         <div id="controls">
             <p>controls here</p>
             <button id="reset-btn">Reset</button>
-        </div>
-        <div id="grid-container">
-            <!-- <p>grid stuff</p> -->
+            <div class="slider-container">
+                <input type="range" min="8" max="100" value="16" class="slider" id="grid-size-slider">
+                <p id="slider-value">16</p>
+            </div>
         </div>
     </div>
 </body>

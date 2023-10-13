@@ -1,12 +1,25 @@
+let gridSize = 32
 
-
-main()
 
 
 function main(){
+    
+    let sliderNumber = 16
 
-    generateSquares(32)
-    // fillSquare()
+    let slider = document.querySelector('#grid-size-slider')
+    let sliderValue = document.querySelector('#slider-value')
+
+    slider.addEventListener('input', (event) =>{
+        sliderNumber = Number(event.target.value)
+        gridSize = sliderNumber
+        sliderValue.textContent = sliderNumber
+    })
+
+    slider.addEventListener('mouseup', () =>{
+        generateSquares(gridSize)
+    })
+
+    generateSquares(gridSize)
 
     const resetButton = document.querySelector('#reset-btn')
 
@@ -27,13 +40,15 @@ function generateSquares(sideLength){
         // console.log('added square')
 
         square.addEventListener('mouseover', () =>{
-            square.style.backgroundColor = `grey`
+            square.style.backgroundColor = colorSquare()
         })
     }
 }
 
-function fillSquare(position){
+function colorSquare(){
 
+    return `red`
+    
 }
 
 function resetGrid(){
@@ -43,3 +58,5 @@ function resetGrid(){
         grid.style.backgroundColor = `wheat`
     })
 }
+
+main()
