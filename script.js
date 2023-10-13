@@ -3,8 +3,6 @@ let gridSize = 32
 
 
 function main(){
-    
-    let sliderNumber = 16
 
     let slider = document.querySelector('#grid-size-slider')
     let sliderValue = document.querySelector('#slider-value')
@@ -29,6 +27,7 @@ function main(){
 }
 
 function generateSquares(sideLength){
+    clearGrid()
     const gridContainer = document.querySelector('#grid-container')
     gridContainer.style.gridTemplateColumns = `repeat(${sideLength}, 1fr)`
     gridContainer.style.gridTemplateRows = `repeat(${sideLength}, 1fr)`
@@ -57,6 +56,12 @@ function resetGrid(){
     grid.forEach((grid) =>{
         grid.style.backgroundColor = `wheat`
     })
+}
+
+function clearGrid(){
+    let squares = document.querySelectorAll('#grid-container > div')
+
+    squares.forEach((div) => div.remove())
 }
 
 main()
