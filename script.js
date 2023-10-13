@@ -44,9 +44,22 @@ function generateSquares(sideLength){
     }
 }
 
+
+let colorDegree = 0
+
 function colorSquare(){
 
-    return `red`
+    if (colorDegree >= 360){
+        colorDegree = 0
+    }
+    colorDegree +=1
+    let colorSaturation = 98
+    let colorLightness = 50
+    
+    let returnColor = `hsl(${colorDegree},${colorSaturation}%,${colorLightness}%)`
+
+    console.log(returnColor)
+    return returnColor
     
 }
 
