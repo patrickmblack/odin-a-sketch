@@ -1,8 +1,20 @@
 let gridSize = 32
 
+let selectedColor;
+
 
 
 function main(){
+
+    const colorButtons = document.querySelectorAll('.color-options')
+    for (const radioButton of colorButtons){
+        radioButton.addEventListener('change', function() {
+            if (this.checked){
+                selectedColor = this.value
+                console.log(selectedColor)
+            }
+        })
+    }
 
     let slider = document.querySelector('#grid-size-slider')
     let sliderValue = document.querySelector('#slider-value')
@@ -48,17 +60,17 @@ function generateSquares(sideLength){
 let colorDegree = 0
 
 function colorSquare(){
-
-    if (colorDegree >= 360){
-        colorDegree = 0
+    let returnColor;
+    if (selectedColor == 'rainbow'){
+        colorDegree +=1
+        let colorSaturation = 98
+        let colorLightness = 50
+        
+        returnColor = `hsl(${colorDegree},${colorSaturation}%,${colorLightness}%)`
+    }else{
+        returnColor = 'black'
     }
-    colorDegree +=1
-    let colorSaturation = 98
-    let colorLightness = 50
-    
-    let returnColor = `hsl(${colorDegree},${colorSaturation}%,${colorLightness}%)`
-
-    console.log(returnColor)
+    //console.log(returnColor)
     return returnColor
     
 }

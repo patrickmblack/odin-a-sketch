@@ -1,7 +1,7 @@
 /* style.css */
 
 body{
-    background-color: rgb(67, 63, 105);
+    background-color: rgb(77, 75, 85);
 }
 
 h1{
@@ -19,6 +19,21 @@ h1{
 #controls{
     background-color: aqua;
     flex-grow: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 8px;
+    width: 500px;
+}
+
+#options{
+    }
+
+.slider-container{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
 }
 
 #grid-container{

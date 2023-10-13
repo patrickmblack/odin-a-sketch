@@ -12,11 +12,17 @@
         <div id="grid-container">
         </div>
         <div id="controls">
-            <p>controls here</p>
+            <!-- <p>controls here</p> -->
             <button id="reset-btn">Reset</button>
             <div class="slider-container">
                 <input type="range" min="8" max="100" value="32" class="slider" id="grid-size-slider">
                 <p id="slider-value">32</p>
+            </div>
+            <div id="options">
+                <input type="radio" name="colors" id="option-black" class="color-options" value="black" checked="'checked">
+                <label for="option-black">Black</label>
+                <input type="radio" name="colors" id="option-rainbow" class="color-options" value="rainbow">
+                <label for="option-rainbow">Rainbow</label>
             </div>
         </div>
     </div>
