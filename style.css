@@ -33,3 +33,7 @@ h1{
     margin: 1px;
     padding: 0px;
 }
+
+#grid-container > div:hover{
+    background-color: black;
+}
