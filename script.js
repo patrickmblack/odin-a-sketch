@@ -57,16 +57,28 @@ function generateSquares(sideLength){
 }
 
 
-let colorDegree = 0
+let colorHue = 0
+let colorValue;
+let colorSaturation = 0
+let colorLightness = 100
 
 function colorSquare(){
     let returnColor;
+
     if (selectedColor == 'rainbow'){
-        colorDegree +=1
-        let colorSaturation = 98
-        let colorLightness = 50
+        colorHue +=1
+        colorSaturation = 98
+        colorLightness = 50
         
-        returnColor = `hsl(${colorDegree},${colorSaturation}%,${colorLightness}%)`
+        returnColor = `hsl(${colorHue},${colorSaturation}%,${colorLightness}%)`
+    }else if(selectedColor == 'shades'){
+        // colorLightness from 0% to 100%
+        if(colorLightness == 0){
+            colorLightness = 100
+        }
+        colorLightness -= 10
+        
+        returnColor = `hsl(0,0%,${colorLightness}%)`
     }else{
         returnColor = 'black'
     }
